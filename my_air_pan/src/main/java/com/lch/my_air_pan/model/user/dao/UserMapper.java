@@ -4,9 +4,7 @@ import com.lch.my_air_pan.model.user.entity.User;
 import com.lch.my_air_pan.model.user.entity.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface UserMapper {
     long countByExample(UserExample example);
 
