@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/echars/echarts.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="index.js"></script>
+</head>
+<body style="height: 100%; margin: 0; display:flex;justify-content: space-between " background="/img/a1.jpg">
+    <div id="show" style="width: 45%;height: 100%; /*background-image:url(/img/a.jpg);*/">
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#allBox" data-toggle="tab">查看所有</a></li>
+            <li><a href="#setBox" data-toggle="tab">人员录入</a></li>
+            <li><a href="#getBox" data-toggle="tab">创建任务</a></li>
+        </ul>
+        <hr><br>
+        <div >
+            姓名：
+            <select id="name">
+                <option value="飞飞">飞飞</option>
+                <option value="惠婷">惠婷</option>
+            </select>
+            体重：<input name="data" id="data" value=""><br>
+            日期：<input name="date" id="date" type="date"><br>
+            <div align="center"> <button type="button" style="" onclick="submit()">提交</button></div>
+        </div>
+        <div>
+            <table id="showTZ"></table>
+        </div>
+    </div>
+    <div id="line" style="border: 1px solid silver  ;width: 1px;height: 100%;"></div>
+
+    <div id="container" style="width: 45%;height: 100%;margin-left: 5%"></div>
+</div>
+
+<script type="text/javascript">
+
+
+
+</script>
+</body>
+</html>
