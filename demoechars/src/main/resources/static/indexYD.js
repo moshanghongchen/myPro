@@ -1,12 +1,12 @@
 $(function () {
-    $("#date").val(getNow());
-    inittable1();
+    $("#date2").val(getNow());
+    inittable2();
 })
 //表单提交
 function submit(){
-    var name = $("#name").val();
-    var data = Number($("#data").val());
-    var date = $("#date").val();
+    var name = $("#name2").val();
+    var data = Number($("#data2").val());
+    var date = $("#date2").val();
     if(isNaN(data)){
         debugger;
         alert("请输入数字，默认单位斤");
@@ -14,7 +14,7 @@ function submit(){
     }
     $.ajax({
         url:"/save",
-        data:{"name":name,"data":data,"date":date,"type":"1"},
+        data:{"name":name,"data":data,"date":date,"type":"2"},
         success:function(){
             location.reload();
         }
@@ -23,10 +23,8 @@ function submit(){
 
 }
 
-function inittable1(){
-
-
-    var dom = document.getElementById("container");
+function inittable2(){
+    var dom = document.getElementById("containerYD");
     var myChart = echarts.init(dom);
     var app = {};
     option = null;
@@ -77,7 +75,7 @@ function inittable1(){
             // min: 'dataMin',
             scale:true,
             axisLabel: {
-                formatter: '{value} 斤'
+                formatter: '{value} km'
             }
         },
         series: []
@@ -88,7 +86,7 @@ function inittable1(){
 
 
     $.ajax({
-        url:"/showAll?type=1",
+        url:"/showAll?type=2",
         dataType:"json",
         success:function(data){
             if(!data||data.length==0){
@@ -138,39 +136,6 @@ function inittable1(){
                 myChart.setOption(option, true);
             }
         }
-    });
-}
-function initTable(){
-    $('#showTZ').bootstrapTable({
-        url: '/queryAll',   //url一般是请求后台的url地址,调用ajax获取数据。此处我用本地的json数据来填充表格。
-        method: "get",                     //使用get请求到服务器获取数据
-        dataType: "json",
-        contentType: 'application/json,charset=utf-8',
-        // toolbar: "#toolbar",                //一个jQuery 选择器，指明自定义的toolbar 例如:#toolbar, .toolbar.
-        height: document.body.clientHeight-165,   //动态获取高度值，可以使表格自适应页面
-        queryParams: {},
-        sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
-        showRefresh: true,                  //是否显示刷新按钮
-        pageNumber: 1,                   //初始化加载第一页，默认第一页
-        pageSize: 10,                    //每页的记录行数（*）
-        pageList: [10, 25, 50, 100],     //可供选择的每页的行数（*）
-        columns: [{
-            field: 'name',
-            title: '姓名',
-            align: 'center'
-        },{
-            field: 'date',
-            title: '日期',
-            align: 'center'
-        },{
-            field: 'data',
-            title: '数据',
-            align: 'center'
-        },{
-        field: 'type',
-            title: '类型',
-            align: 'center'
-    }]
     });
 }
 

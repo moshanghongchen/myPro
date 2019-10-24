@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/echars/echarts.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="index.js"></script>
+</head>
+<body style="height: 100%; margin: 0; display:flex;justify-content: space-between " background="/img/a.jpg">
+<div id="show" style="width: 45%;height: 100%; /*background-image:url(/img/a.jpg);*/">
+    <h1>腹肌养成计划</h1>
+    <hr><br>
+    <div >
+
+        姓名：
+        <select id="name">
+            <option value="飞飞">飞飞</option>
+            <option value="惠婷">惠婷</option>
+        </select>
+        体重：<input name="data" id="data" value=""><br>
+        日期：<input name="date" id="date" type="date"><br>
+        <div align="center"> <button type="button" style="" onclick="submit()">提交</button></div>
+    </div>
+    <div>
+        <table id="showTZ"></table>
+    </div>
+</div>
+<div id="line" style="border: 1px solid silver  ;width: 1px;height: 100%;"></div>
+
+<div id="container" style="width: 45%;height: 100%;margin-left: 5%"></div>
+</div>
+
+<script type="text/javascript">
+
+
+
+</script>
+</body>
+</html>
